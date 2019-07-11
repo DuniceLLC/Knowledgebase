@@ -106,13 +106,13 @@ git pull
 ```bash
 git pull origin [YOUR_BRANCH]
 ```
+Caution: if you are not at the YOUR_BRANCH locally, YOUR_BRANCH will be merged with local branch
+
 ######Example
 
 ```bash
 git pull origin feature/#2233-authSystem
 ```
-Caution: if you are not at the YOUR_BRANCH locally, YOUR_BRANCH will be merged with local branch
-
 ## Create new branch
 
 ######Format
