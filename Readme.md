@@ -73,10 +73,23 @@ ssh -i ~/.ssh/id_rsa ubuntu@google.dunice-testing.com -L 27018:localhost:27017
 
 #Github
 
+## Clone existing repository
+
+######Format
+
+```bash
+git clone [URL]
+```
+
 ## Fetch new branches from repository
 
 ```bash
 git fetch
+```
+#####With branch selection
+
+```bash
+git fetch origin [BRANCH_NAME]
 ```
 
 ## Pull changes from remote branch
@@ -93,12 +106,12 @@ git pull
 ```bash
 git pull origin [YOUR_BRANCH]
 ```
-
 ######Example
 
 ```bash
 git pull origin feature/#2233-authSystem
 ```
+Caution: if you are not at the YOUR_BRANCH locally, YOUR_BRANCH will be merged with local branch
 
 ## Create new branch
 
@@ -128,6 +141,15 @@ git checkout [BRANCH_NAME]
 git checkout feature/#2233-authSystem
 ```
 
+## Rename branch
+
+######Format
+
+```bash
+git branch -m [NEW_NAME_FOR_CURRENT_BRANCH]
+git branch -m [OLD_NAME] [NEW_NAME]
+```
+
 ## Add changes, commit and push to repository
 
 ######Format
@@ -146,18 +168,47 @@ git commit -m "implemented ideal logic"
 git push
 ```
 
+## Update commit name or add new files to a commit
+
+######Format
+
+```bash
+git commit --amend
+```
+
+######Example
+
+```bash
+git add src/some-forgotten-file.js
+git commit --amend
+```
+Caution: amend SHOULD only be used when your commits are not pushed. 
+
 ## Check local branches and selected branch
 
 ```bash
 git branch
 ```
+#####Only merged branches (can be deleted safely)
+```bash
+git branch --merged
+```
 
 ## Delete branch
+
+#####Safely (merged only)
 
 ######Format
 
 ```bash
-git branch -D [BRANCH_NAME]
+git branch -d [ALREADY_MERGED_BRANCH_NAME]
+```
+#####Force
+
+######Format
+
+```bash
+git branch -D [ANY_BRANCH_NAME]
 ```
 
 ######Example
@@ -171,6 +222,31 @@ git branch -D feature/#2233-authSystem
 ```bash
 git status
 ```
+
+## Check changes in files
+
+#####Not staged
+
+######Format
+
+```bash
+git diff [PATH_TO_FILE_OR_FOLDER]
+```
+
+#####Staged (added with `git add`)
+
+######Format
+
+```bash
+gid diff --cached [PATH_TO_STAGED_FILES]
+```
+
+######Example
+```bash
+git diff src
+```
+
+Note: `PATH_TO_FILE_OR_FOLDER` and `PATH_TO_STAGED_FILES` can be omitted
 
 ## Drop merge changes
 
@@ -196,6 +272,18 @@ git log
 
 ```bash
 git log -p [YOUR_FILE_NAME]
+```
+
+## Check what commits you have done since [BRANCH_NAME]
+
+######Format
+```bash
+git cherry -v [BRANCH_NAME]
+```
+
+######Example
+```bash
+git cherry -v master
 ```
 
 ## Manage set of tracked repositories
