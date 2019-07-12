@@ -1,5 +1,3 @@
-# SSH
-
 ## Initialisation ssh keys
 1.  Run in terminal - `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
 2.  Skip all (click enter many times)
