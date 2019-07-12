@@ -133,7 +133,7 @@ git diff [PATH_TO_FILE_OR_FOLDER]
 ```bash
 git diff src
 ```
-> Note: `PATH_TO_FILE_OR_FOLDER` and `PATH_TO_STAGED_FILES` can be omitted
+> Note: `PATH_TO_FILE_OR_FOLDER` can be omitted
 
 ---
 
