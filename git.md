@@ -1,5 +1,3 @@
-# SCM (git)
-
 ## Clone existing repository
 ### Format
 ```bash
