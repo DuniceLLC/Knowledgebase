@@ -1,6 +1,6 @@
-#apiDoc
+# apiDoc
 
-##Description
+## Description
 
 > Library which provides functionality for creation a documentation from API descriptions in your source code.
 > ##Platforms
@@ -9,18 +9,18 @@
 > 3.Ruby
 > 4.PHP
 
-##[Link for the npm](https://www.npmjs.com/package/apidoc)
+### [Link for the npm](https://www.npmjs.com/package/apidoc)
 
-##[Link for the documentstion](http://apidocjs.com/)
+### [Link for the documentstion](http://apidocjs.com/)
 
-#Install
+# Install
 
 > 1.npm install apidoc -g
 > 2.Add script "apidoc": "apidoc -i ./routes -o ./apidoc"
 > 3.Add in package.json apidoc config
 
-##apidoc config
-######Format
+## apiDoc config
+##### Format
 
 ```json
 {
@@ -32,7 +32,7 @@
 }
 ```
 
-######Example
+##### Example
 
 ```json
 {
@@ -46,88 +46,88 @@
 
 > All static will be saved in apidoc direcroty of the root
 
-#Minimum requirements
+# Minimum requirements
 
-##@api
-######Format
+## @api
+##### Format
 
 ```
 * @api {[METHOD]} [YOUR_ROUTE] [COMMENT]
 ```
 
-######Example
+##### Example
 
 ```
 * @api {get} /api/v1/appointments/get-available-apointments Request availible appointments on one day
 ```
 
-##@apiName
-######Format
+## @apiName
+##### Format
 
 ```
 * @apiName [NAME]
 ```
 
-######Example
+##### Example
 
 ```
 * @apiName availibleAppointments
 ```
 
-##@apiGroup
-######Format
+## @apiGroup
+##### Format
 
 ```
 * @apiGroup [GROUP_NAME]
 ```
 
-######Example
+##### Example
 
 ```
 * @apiGroup Appointment
 ```
 
-##@apiDescription
-######Format
+## @apiDescription
+##### Format
 
 ```
 * @apiDescription [DESCRIPTION]
 ```
 
-######Example
+##### Example
 
 ```
  * @apiDescription Api send all all availible appointments.
 ```
 
-##@apiHeader
-######Format
+## @apiHeader
+##### Format
 
 ```
  * @apiHeader {[TYPE]} [HEADER_KEY] [DESCRIPTION].
 ```
 
-######Example
+##### Example
 
 ```
  * @apiHeader {string} x-access-token Users unique access-key.
 ```
 
-##@apiParam
-######Format
+## @apiParam
+##### Format
 
 ```
 * @apiParam {[TYPE]} [KEY] [DESCRIPTION]
 ```
 
-######Example
+##### Example
 
 ```
 * @apiParam {string} propertyId id of property
 ```
 
-##@apiSuccess
-######Format
+## @apiSuccess
+##### Format
 
 ```
 /**
@@ -135,7 +135,7 @@
  */
 ```
 
-######Example
+###### Example
 
 ```
 /**
@@ -145,35 +145,35 @@
  */
 ```
 
-##@apiError
-######Format
+## @apiError
+##### Format
 
 ```
  * @apiError [FIELD] [DESCRIPTION]
 ```
 
-######Example
+##### Example
 
 ```
  * @apiError UserNotFound The id of the User was not found.
 ```
 
-##@apiSampleRequest
-######Format
+## @apiSampleRequest
+##### Format
 
 ```
  * @apiSampleRequest [PATH]
 ```
 
-######Example
+##### Example
 
 ```
  * @apiSampleRequest /api/v1/appointments/get-available-apointments
 ```
 
-#Recommended parameters
-##@apiSuccessExample
-######Example
+# Recommended parameters
+## @apiSuccessExample
+##### Example
 
 ```
  * @apiSuccessExample Success-Response:
@@ -204,8 +204,8 @@
  *}
 ```
 
-##@apiErrorExample
-######Example
+## @apiErrorExample
+##### Example
 
 ```
  * @apiErrorExample {json} Error-Response:
@@ -219,7 +219,7 @@
  *}
 ```
 
-#Route Example
+# Route Example
 
 ```js
 /**
