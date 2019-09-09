@@ -35,12 +35,13 @@ Run the following commands in a Terminal after installing Homebrew:
       npm install -g react-native-cli
 
 #### 3. Configure development environment
-   i) For **iOS**.
+i) For **iOS**.
 - Update MacOS to last version.
 - Install last version of xCode via Mac App Store.
 - Activate **Command Line Tools** 
  ![enter image description here](https://facebook.github.io/react-native/docs/assets/GettingStartedXcodeCommandLineTools.png)
- ii) For **Android**.
+
+ii) For **Android**.
 - Install [Android Studio](https://developer.android.com/studio/index.html). Choose a "Custom" setup when prompted to select an installation type. Make sure the boxes next to all of the following are checked:
  
 	- List item
@@ -65,6 +66,13 @@ Select the "SDK Platforms" tab from within the SDK Manager, then check the box n
 - Configure the ANDROID_HOME environment variable
  Add the following lines to your `$HOME/.bash_profile` or `$HOME/.bashrc` config file:
 
+      export ANDROID_HOME=$HOME/Library/Android/sdk
+      export PATH=$PATH:$ANDROID_HOME/emulator
+      export PATH=$PATH:$ANDROID_HOME/tools
+      export PATH=$PATH:$ANDROID_HOME/tools/bin
+      export PATH=$PATH:$ANDROID_HOME/platform-tools  
+
+
 #### 4. Creating a new application or open existing.
       react-native init ProjectName
 
@@ -87,5 +95,5 @@ Select the "SDK Platforms" tab from within the SDK Manager, then check the box n
 #### 3. Running your React Native application.
       
       cd ProjectName
-      `yarn` or `npm install`
+      yarn or npm install
       `expo start --ios` or `expo start --android`
