@@ -44,11 +44,10 @@ i) For **iOS**.
 ii) For **Android**.
 - Install [Android Studio](https://developer.android.com/studio/index.html). Choose a "Custom" setup when prompted to select an installation type. Make sure the boxes next to all of the following are checked:
  
-  * List item
-  * Android SDK
-  * Android SDK Platform
-  * Performance (Intel ® HAXM) (See here for AMD)
-  * Android Virtual Device
+      - Android SDK
+      - Android SDK Platform
+      - Performance (Intel ® HAXM) (See here for AMD)
+      - Android Virtual Device
  
 Then, click "Next" to install all of these components.
 
