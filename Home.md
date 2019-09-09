@@ -2,9 +2,9 @@
 That repository intended for short cheatsheets which do easier your life.
 
 ## Table of contents
-- [SSH](ssh.md)
+- [SSH](ssh)
 
-- [SCM(git)](git.md)
+- [SCM(git)](git)
 
 - Unix (coming soon)
 
