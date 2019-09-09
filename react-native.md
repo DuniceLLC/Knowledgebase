@@ -74,26 +74,27 @@ Select the "SDK Platforms" tab from within the SDK Manager, then check the box n
 
 
 #### 4. Creating a new application or open existing.
-      react-native init ProjectName
+`react-native init ProjectName`
 
 #### 5. Running your React Native application.
+`cd ProjectName`
 
-      cd ProjectName
-      `yarn` or `npm install`
-      `react-native run-ios` or `react-native run-android`
+`yarn` **or** `npm install`
+
+`react-native run-ios` **or** `react-native run-android`
 
 
 ### Expo CLI Quickstart  for MacOS.
 
 #### 1. Assuming that you have [Node 10 LTS](https://nodejs.org/en/download/) or greater installed, you can use npm to install the Expo CLI command line utility:
+`npm install -g expo-cli`
 
-    npm install -g expo-cli
 #### 2. Creating a new application or open existing.
-
-      expo-cli init ProjectName
+`expo-cli init ProjectName`
 
 #### 3. Running your React Native application.
-      
-      cd ProjectName
-      yarn or npm install
-      `expo start --ios` or `expo start --android`
+`cd ProjectName`
+
+`yarn` **or** `npm install`
+
+`expo start --ios` **or** `expo start --android`
