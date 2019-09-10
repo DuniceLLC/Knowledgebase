@@ -6,4 +6,6 @@ That repository intended for short cheatsheets which do easier your life.
 
 - [SCM(git)](git)
 
+- [apiDoc](apidoc)
+
 - Unix (coming soon)
