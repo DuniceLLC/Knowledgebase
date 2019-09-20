@@ -18,4 +18,4 @@
 
 ## Tutorials, videos, examples
 - [William Candillon youtube channel](https://www.youtube.com/user/wcandill)
-- [William Candilllon tutorials and challenges repository](https://github.com/wcandillon/can-it-be-done-in-react-native)
+- [William Candilllon tutorials and challenges repository](https://github.com/wcandillon/can-it-be-done-in-react-native
