@@ -9,5 +9,15 @@ That repository intended for short cheatsheets which do easier your life.
 - [React Native](react-native.md)
 
 - [apiDoc](apidoc)
+  
+- [Docker](docker)
+
+- [JavaScript](js)
+
+- [Vue](vue)
+
+- [Python](python)
+
+- [Django](django)
 
 - Unix (coming soon)
