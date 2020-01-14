@@ -24,13 +24,6 @@ A Django App that adds Cross-Origin Resource Sharing (CORS) headers to responses
 
 Allow to do bulk operations such as create, update and delete in DRF
 
-Example: 
-```
-# create multiple resources
-POST
-[{"field":"value","field2":"value2"}]
-```
-
 ### 7. [django-rest-framework-simplejwt](https://github.com/davesque/django-rest-framework-simplejwt)
 
 Provides an out-of-the-box solution for JWT authentication
@@ -50,4 +43,4 @@ Allows to:
 - Runs a script in the django context.
 - Copies files found in settings.MEDIA_ROOT to S3
 - Validate templates on syntax and compile errors
-- Other(https://django-extensions.readthedocs.io/en/latest/command_extensions.html#current-command-extensions)
+- [Other](https://django-extensions.readthedocs.io/en/latest/command_extensions.html#current-command-extensions)
