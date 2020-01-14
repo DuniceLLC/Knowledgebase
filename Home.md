@@ -12,6 +12,12 @@ That repository intended for short cheatsheets which do easier your life.
   
 - [Docker](docker)
 
-- Unix (coming soon)
+- [JavaScript](js)
 
-## [Most used libraries](most-used-libs/Home.md)
+- [Vue](vue)
+
+- [Python](python)
+
+- [Django](django)
+
+- Unix (coming soon)
