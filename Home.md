@@ -21,5 +21,3 @@ That repository intended for short cheatsheets which do easier your life.
 - [Python](python)
 
 - [Django](django)
-
-- Unix (coming soon)
