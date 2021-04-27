@@ -1,1 +1,5 @@
 theme: jekyll-theme-minimal
+name: Dunice KnowledgeBase
+description: KnowledgeBase
+markdown: GFM
+highlighter: rouge
