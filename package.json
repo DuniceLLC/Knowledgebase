@@ -1,0 +1,19 @@
+{
+  "name": "dunice-knowledgebase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@codebasehq.com:dunice/knowledgebase/wiki.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "markdown-it": "^12.0.6"
+  }
+}

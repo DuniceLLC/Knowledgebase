@@ -1,0 +1,77 @@
+<h2>Installing docker</h2>
+<h3>Mac OS:</h3>
+<p><a href="https://docs.docker.com/v17.09/docker-for-mac/install/">Download Docker for Mac</a></p>
+<ol>
+<li>
+<p><a href="https://hub.docker.com/signup">Sign Up</a> on docker hub.</p>
+</li>
+<li>
+<p>Install downloaded .dmg file and login in the Docker application</p>
+</li>
+</ol>
+<h3>Ubuntu</h3>
+<p><a href="https://docs.docker.com/v17.09/engine/installation/linux/docker-ce/ubuntu/">Installation for Ubuntu</a></p>
+<h2>Installing docker-compose</h2>
+<h3>Mac OS:</h3>
+<p>For mac OS docker-compose installs automatically with Docker</p>
+<h3>Ubuntu:</h3>
+<p>Install docker compose</p>
+<pre><code class="language-bash">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose 
+ 
+sudo chmod +x /usr/local/bin/docker-compose 
+ 
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose 
+</code></pre>
+<p>Test the installation</p>
+<pre><code class="language-bash">docker-compose --version 
+</code></pre>
+<h3>Start containers via docker-compose</h3>
+<p>Run the command in the directory with <code>docker-compose.yml</code>:</p>
+<pre><code class="language-bash">docker-compose up 
+</code></pre>
+<h3>Start containers for specific docker-compose.yml file</h3>
+<p><em>Replace docker-compose.dev.yml</em> to you docker-compose file path</p>
+<pre><code class="language-bash">docker-compose -f docker-compose.dev.yml up 
+</code></pre>
+<h3>Start docker-compose in background</h3>
+<p>Add -d flag to your docker-compose command. i.e:</p>
+<pre><code class="language-bash">docker-compose up -d 
+</code></pre>
+<h3>Stop docker-compose started in background</h3>
+<pre><code class="language-bash">docker-compose down 
+</code></pre>
+<p>or</p>
+<pre><code class="language-bash">docker-compose -f &lt;path/to/docker-compose.yml&gt; down 
+</code></pre>
+<h3>Run specific container or command in container</h3>
+<pre><code class="language-bash">docker-compose run --rm &lt;service name from docker-compose&gt; &lt;command&gt; 
+</code></pre>
+<h4>Examples:</h4>
+<p>Start <code>web</code> service and attach to bash, to execute any bash commands</p>
+<pre><code class="language-bash">docker-compose run --rm web bash 
+</code></pre>
+<p>Start <code>web</code> service and run any command</p>
+<pre><code class="language-bash">docker-compose run --rm web npm run start 
+</code></pre>
+<p>Start <code>web</code> service and run multiple commands</p>
+<pre><code class="language-bash">docker-compose run --rm web bash -c &quot;cd /code/web &amp;&amp; npm run start&quot; 
+</code></pre>
+<h3>Attach to bash of running container</h3>
+<ol>
+<li>Get list of running containers</li>
+</ol>
+<pre><code class="language-bash">docker ps 
+</code></pre>
+<ol start="2">
+<li>
+<p>Grep name of container which you need. (I.e its <code>app_web_1</code>)</p>
+</li>
+<li>
+<p>Connect to started container</p>
+</li>
+</ol>
+<pre><code class="language-bash">docker exec -it app_web_1 bash 
+</code></pre>
+<p><em>Note</em>:</p>
+<p><code>docker-compose run ...</code> creates new container from a  service from docker-compose</p>
+<p><code>docker exec -it bash</code> attaches to started docker container</p>

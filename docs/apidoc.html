@@ -1,0 +1,213 @@
+<h1>apiDoc</h1>
+<h2>Description</h2>
+<blockquote>
+<p>Library which provides functionality for creation a documentation from API descriptions in your source code.
+##Platforms
+1.JavaScript
+2.Python
+3.Ruby
+4.PHP</p>
+</blockquote>
+<h3><a href="https://www.npmjs.com/package/apidoc">Link for the npm</a></h3>
+<h3><a href="http://apidocjs.com/">Link for the documentstion</a></h3>
+<h1>Install</h1>
+<blockquote>
+<p>1.npm install apidoc -g
+2.Add script &quot;apidoc&quot;: &quot;apidoc -i ./routes -o ./apidoc&quot;
+3.Add in package.json apidoc config</p>
+</blockquote>
+<h2>apiDoc config</h2>
+<h5>Format</h5>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;[NAME_OF_YOUR_PROJECT]&quot;,
+  &quot;title&quot;: &quot;[BROWSER_TITLE_TEXT]&quot;,
+  &quot;url&quot;: &quot;[PREFIX_FOR_API_PATH_ENDPOINTS]&quot;,
+  &quot;order&quot;: [&quot;GROUP&quot;],
+  &quot;sampleUrl&quot;: &quot;[PATH]&quot;
+}
+</code></pre>
+<h5>Example</h5>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Example&quot;,
+  &quot;title&quot;: &quot;My Title&quot;,
+  &quot;url&quot;: &quot;https://api.github.com/v1&quot;,
+  &quot;order&quot;: [&quot;Error&quot;, &quot;Define&quot;, &quot;PostTitleAndError&quot;, &quot;PostError&quot;],
+  &quot;sampleUrl&quot;: &quot;https://api.github.com/v1&quot;
+}
+</code></pre>
+<blockquote>
+<p>All static will be saved in apidoc direcroty of the root</p>
+</blockquote>
+<h1>Minimum requirements</h1>
+<h2>@api</h2>
+<h5>Format</h5>
+<pre><code>* @api {[METHOD]} [YOUR_ROUTE] [COMMENT]
+</code></pre>
+<h5>Example</h5>
+<pre><code>* @api {get} /api/v1/appointments/get-available-apointments Request availible appointments on one day
+</code></pre>
+<h2>@apiName</h2>
+<h5>Format</h5>
+<pre><code>* @apiName [NAME]
+</code></pre>
+<h5>Example</h5>
+<pre><code>* @apiName availibleAppointments
+</code></pre>
+<h2>@apiGroup</h2>
+<h5>Format</h5>
+<pre><code>* @apiGroup [GROUP_NAME]
+</code></pre>
+<h5>Example</h5>
+<pre><code>* @apiGroup Appointment
+</code></pre>
+<h2>@apiDescription</h2>
+<h5>Format</h5>
+<pre><code>* @apiDescription [DESCRIPTION]
+</code></pre>
+<h5>Example</h5>
+<pre><code> * @apiDescription Api send all all availible appointments.
+</code></pre>
+<h2>@apiHeader</h2>
+<h5>Format</h5>
+<pre><code> * @apiHeader {[TYPE]} [HEADER_KEY] [DESCRIPTION].
+</code></pre>
+<h5>Example</h5>
+<pre><code> * @apiHeader {string} x-access-token Users unique access-key.
+</code></pre>
+<h2>@apiParam</h2>
+<h5>Format</h5>
+<pre><code>* @apiParam {[TYPE]} [KEY] [DESCRIPTION]
+</code></pre>
+<h5>Example</h5>
+<pre><code>* @apiParam {string} propertyId id of property
+</code></pre>
+<h2>@apiSuccess</h2>
+<h5>Format</h5>
+<pre><code>/**
+ * @apiSuccess {[TYPE]} [KEY] [DESCRIPTION].
+ */
+</code></pre>
+<h6>Example</h6>
+<pre><code>/**
+ * @apiSuccess {Object[]} profiles       List of user profiles.
+ * @apiSuccess {Number}   profiles.age   Users age.
+ * @apiSuccess {String}   profiles.image Avatar-Image.
+ */
+</code></pre>
+<h2>@apiError</h2>
+<h5>Format</h5>
+<pre><code> * @apiError [FIELD] [DESCRIPTION]
+</code></pre>
+<h5>Example</h5>
+<pre><code> * @apiError UserNotFound The id of the User was not found.
+</code></pre>
+<h2>@apiSampleRequest</h2>
+<h5>Format</h5>
+<pre><code> * @apiSampleRequest [PATH]
+</code></pre>
+<h5>Example</h5>
+<pre><code> * @apiSampleRequest /api/v1/appointments/get-available-apointments
+</code></pre>
+<h1>Recommended parameters</h1>
+<h2>@apiSuccessExample</h2>
+<h5>Example</h5>
+<pre><code> * @apiSuccessExample Success-Response:
+ *{
+ *   &quot;data&quot;: {
+ *      &quot;availableTimes&quot;: [
+ *        &quot;10:00&quot;,
+ *        &quot;10:30&quot;,
+ *        &quot;11:30&quot;,
+ *        &quot;12:30&quot;,
+ *        &quot;13:30&quot;,
+ *        &quot;14:00&quot;,
+ *        &quot;14:30&quot;,
+ *        &quot;15:00&quot;,
+ *        &quot;15:30&quot;,
+ *        &quot;16:00&quot;,
+ *        &quot;16:30&quot;,
+ *        &quot;17:00&quot;,
+ *        &quot;17:30&quot;
+ *      ],
+ *       &quot;gracePeriod&quot;: 30
+ *   },
+ *   &quot;datetime&quot;: 1564164385982,
+ *   &quot;info&quot;: &quot;APPOINTMENTS&quot;,
+ *   &quot;misc&quot;: &quot;NO_ADDITIONAL_INFORMATION&quot;,
+ *   &quot;request&quot;: &quot;/api/v1/appointments/get-available-apointments?date=2019-07-29&amp;&amp;propertyId=1 [GET]&quot;,
+ *   &quot;status&quot;: 200
+ *}
+</code></pre>
+<h2>@apiErrorExample</h2>
+<h5>Example</h5>
+<pre><code> * @apiErrorExample {json} Error-Response:
+ *  Error 401: Unauthorized
+ *{
+ *   &quot;datetime&quot;: 1564148026540,
+ *   &quot;info&quot;: &quot;MISSING_TOKEN&quot;,
+ *   &quot;misc&quot;: &quot;NO_ADDITIONAL_INFORMATION&quot;,
+ *   &quot;request&quot;: &quot;/api/v1/appointments/get-appointment-schedule?date= [GET]&quot;,
+ *   &quot;status&quot;: 401
+ *}
+</code></pre>
+<h1>Route Example</h1>
+<pre><code class="language-js">/**
+ * @api {get} /api/v1/appointments/get-available-apointments Request availible appointments on one day
+ * @apiName availibleAppointments
+ * @apiGroup Appointment
+ *
+ * @apiDescription Api send all all availible appointments.
+ * @apiHeader {string} x-access-token Users unique access-key.
+ * @apiParam {string} date appointment date YY MM DD
+ * @apiParam {string} propertyId id of property
+ *
+ * @apiSuccess {string} appointmentDate appointment date.
+ * @apiSuccess {number} updated updated.
+ *
+ * @apiSuccessExample Success-Response:
+ *{
+ *   &quot;data&quot;: {
+ *      &quot;availableTimes&quot;: [
+ *        &quot;10:00&quot;,
+ *        &quot;10:30&quot;,
+ *        &quot;11:30&quot;,
+ *        &quot;12:30&quot;,
+ *        &quot;13:30&quot;,
+ *        &quot;14:00&quot;,
+ *        &quot;14:30&quot;,
+ *        &quot;15:00&quot;,
+ *        &quot;15:30&quot;,
+ *        &quot;16:00&quot;,
+ *        &quot;16:30&quot;,
+ *        &quot;17:00&quot;,
+ *        &quot;17:30&quot;
+ *      ],
+ *       &quot;gracePeriod&quot;: 30
+ *   },
+ *   &quot;datetime&quot;: 1564164385982,
+ *   &quot;info&quot;: &quot;APPOINTMENTS&quot;,
+ *   &quot;misc&quot;: &quot;NO_ADDITIONAL_INFORMATION&quot;,
+ *   &quot;request&quot;: &quot;/api/v1/appointments/get-available-apointments?date=2019-07-29&amp;&amp;propertyId=1 [GET]&quot;,
+ *   &quot;status&quot;: 200
+ *}
+ * @apiError UserNotFound MISSING_TOKEN
+ *
+ * @apiErrorExample {json} Error-Response:
+ *  Error 401: Unauthorized
+ *{
+ *   &quot;datetime&quot;: 1564148026540,
+ *   &quot;info&quot;: &quot;MISSING_TOKEN&quot;,
+ *   &quot;misc&quot;: &quot;NO_ADDITIONAL_INFORMATION&quot;,
+ *   &quot;request&quot;: &quot;/api/v1/appointments/get-appointment-schedule?date= [GET]&quot;,
+ *   &quot;status&quot;: 401
+ *}
+ *
+ * @apiSampleRequest /api/v1/appointments/get-available-apointments
+ */
+router.get(
+  '/get-available-apointments',
+  authenticate,
+  availableApointementsValidation,
+  controller.getAvailableApointments
+);
+</code></pre>

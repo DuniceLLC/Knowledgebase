@@ -1,0 +1,36 @@
+<h2>What is it</h2>
+<p>Для того чтоы было проще работать с Docker образами (image), есть глобальное хранилище всех образов (типа как <em>nmpjs.org</em> только для <em>Docker</em>)</p>
+<p>Но, нельзя выгружать приватный код на общедоступные сервера. Это как минимум не безопастно.</p>
+<p>Поэтому, мы запустили свое мини хранилище Docker образов (доступно по домену <code>docker-registry.dunice-testing.com</code>)</p>
+<p>Примерный флоу работы такой:</p>
+<ol>
+<li>На локальной машине (либо на машине CI/CD) мы авторизуемся в нашем хранилище.</li>
+<li>Создаем новый Docker image</li>
+<li>Отправляем image в наше хранилище</li>
+<li>Заходим на VPS, где мы хотим развернуть</li>
+<li>Авторизуемся в нашем хранилище</li>
+<li>Стягиваем нужный нам image и запускаем контейнер (или запускаем docker-compose)</li>
+<li>Деавторизуемся</li>
+</ol>
+<h2>How to use</h2>
+<h3>Auth</h3>
+<p>Для начала нам нужно авторизоваться (для локальных машин, в офисе, это достаточно будет сделать один раз. Для облачных VPS в целях безопасности, нам каждый раз нужно авторизовываться и деавторизовываться)</p>
+<p><code>docker login docker-registry.dunice-testing.com</code></p>
+<ul>
+<li>
+<p>login: <code>dev_push</code></p>
+</li>
+<li>
+<p>пароль <code>b4n4n4_312UUH</code></p>
+</li>
+</ul>
+<p>Для того чтобы деавторизовываться нужно выполнить</p>
+<p><code>docker logout docker-registry.dunice-testing.com</code></p>
+<h3>Use</h3>
+<p>Сборка образа
+<code>docker build . -t docker-registry.dunice-testing.com/&lt;image_name&gt;</code></p>
+<p>Отправляем образ в хранилище
+<code>docker push docker-registry.dunice-testing.com/&lt;image_name&gt;</code></p>
+<p>Забираем образ из хранилища
+<code>docker pull docker-registry.dunice-testing.com/&lt;image_name&gt;</code></p>
+<p>Можно указать <code>docker-registry.dunice-testing.com/&lt;image_name&gt;</code> в поле image у докер-композа.</p>

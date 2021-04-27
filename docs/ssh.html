@@ -1,0 +1,47 @@
+<h2>Initialisation ssh keys</h2>
+<ol>
+<li>Run in terminal - <code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code></li>
+<li>Skip all (click enter many times)</li>
+<li>Ready you can check it in ~/.ssh/ (id_rsa - private key, id_rsa.pub - public key)</li>
+</ol>
+<hr>
+<h2>Connect to server via ssh</h2>
+<h3>Format</h3>
+<pre><code class="language-bash">ssh -i ~/.ssh/id_rsa [name_of_user]@[domain_name]
+</code></pre>
+<h3>Example</h3>
+<pre><code class="language-bash">ssh -i ~/.ssh/id_rsa ubuntu@google.dunice-testing.com
+</code></pre>
+<hr>
+<h2>Connection via ssh with agent forwarding</h2>
+<h3>Format</h3>
+<pre><code class="language-bash">ssh -i ~/.ssh/id_rsa -A [name_of_user]@[domain_name]
+</code></pre>
+<h3>Example</h3>
+<pre><code class="language-bash">ssh -i ~/.ssh/id_rsa -A ubuntu@google.dunice-testing.com
+</code></pre>
+<hr>
+<h2>Send file via ssh</h2>
+<h3>Format</h3>
+<pre><code class="language-bash">scp -i ~/.ssh/id_rsa [path_to_file] [name_of_user]@[domain_name]:[/path/to/file]
+</code></pre>
+<h3>Example</h3>
+<pre><code class="language-bash">scp -i ~/.ssh/id_rsa ./build.tar.gz ubuntu@google.dunice-testing.com:/home/ubuntu
+</code></pre>
+<hr>
+<h2>Download file via ssh</h2>
+<h3>Format</h3>
+<pre><code class="language-bash">scp -i ~/.ssh/id_rsa [name_of_user]@[domain_name]:[/path/to/file] [path_to_save]
+</code></pre>
+<h3>Example</h3>
+<pre><code class="language-bash">scp -i ~/.ssh/id_rsa ubuntu@google.dunice-testing.com:/home/ubuntu/dump.tar.gz ./
+</code></pre>
+<hr>
+<h2>Share server port (i.e staging db port) to your local machine</h2>
+<h3>Format</h3>
+<pre><code class="language-bash">ssh -i ~/.ssh/id_rsa [name_of_user]@[domain_name] -L [local_port]:localhost:[server_port]
+</code></pre>
+<h3>Example</h3>
+<pre><code class="language-bash">ssh -i ~/.ssh/id_rsa ubuntu@google.dunice-testing.com -L 27018:localhost:27017
+</code></pre>
+<hr>
