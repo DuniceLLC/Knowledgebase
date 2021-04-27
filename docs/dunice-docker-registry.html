@@ -1,4 +1,16 @@
-<h2>What is it</h2>
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <h2>What is it</h2>
 <p>Для того чтоы было проще работать с Docker образами (image), есть глобальное хранилище всех образов (типа как <em>nmpjs.org</em> только для <em>Docker</em>)</p>
 <p>Но, нельзя выгружать приватный код на общедоступные сервера. Это как минимум не безопастно.</p>
 <p>Поэтому, мы запустили свое мини хранилище Docker образов (доступно по домену <code>docker-registry.dunice-testing.com</code>)</p>
@@ -34,3 +46,7 @@
 <p>Забираем образ из хранилища
 <code>docker pull docker-registry.dunice-testing.com/&lt;image_name&gt;</code></p>
 <p>Можно указать <code>docker-registry.dunice-testing.com/&lt;image_name&gt;</code> в поле image у докер-композа.</p>
+
+</body>
+
+</html>
